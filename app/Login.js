@@ -34,7 +34,6 @@ export default class Login extends Component{
 
   _onLogin() {
     lock.show({
-        closable: true,
       }, (err, profile, token) => {
         if (err) {
           console.log(err);
