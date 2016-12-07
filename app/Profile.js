@@ -8,26 +8,20 @@ import {
   TouchableHighlight,
   Alert,
 } from 'react-native';
+import ProfileList from './ProfileList'
 
 var API_ENDPOINT = 'http://localhost:3001/secured/ping';
 
 export default class ProfileView extends Component{
+  componentWillMount() {
+    // debugger
+    // console.error(this.props.profile)
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.messageBox}>
-          <Image
-            style={styles.avatar}
-            source={{uri: this.props.profile.picture}}
-          />
-          <Text style={styles.title}>Welcome {this.props.profile.name}</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.callApiButton}
-          underlayColor='#949494'
-          onPress={this._onCallApi}>
-          <Text>Call API</Text>
-        </TouchableHighlight>
+        <ProfileList profile={this.props.profile}/>
       </View>
     );
   }
@@ -61,7 +55,7 @@ export default class ProfileView extends Component{
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
