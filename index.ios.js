@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   nav: {
     height: 60,
-    backgroundColor: '#efefef'
+    backgroundColor: '#efefef',
   }
 });
 

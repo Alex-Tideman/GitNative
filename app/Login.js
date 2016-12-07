@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#fff',
+    marginTop: 60,
   },
   messageBox: {
     flex: 1,
