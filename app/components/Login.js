@@ -9,17 +9,21 @@ import {
 } from 'react-native';
 
 import Auth0Lock from 'react-native-lock';
-var credentials = require('../auth0-credentials');
+var credentials = require('../../auth0-credentials');
 var lock = new Auth0Lock(credentials);
 
 export default class Login extends Component{
+  constructor (props) {
+   super(props)
+ }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
           <Image
             style={styles.badge}
-            source={require('./img/mn_outline.jpg')} />
+            source={require('../src/img/mn_outline.jpg')} />
         </View>
         <Text style={styles.title}>Welcome to GitNative</Text>
         <TouchableHighlight
@@ -43,7 +47,7 @@ export default class Login extends Component{
           name: 'Profile',
           passProps: {
             profile: profile,
-            token: token,
+            token: token
           }
         })
     })

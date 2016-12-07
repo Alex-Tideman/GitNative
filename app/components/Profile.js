@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import {
   StyleSheet,
@@ -8,29 +8,19 @@ import {
   TouchableHighlight,
   Alert,
   TextInput,
+  ScrollView,
   Animated
-} from 'react-native';
+} from 'react-native'
 
-const data = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
+import Row from './Row'
 
-export default class ProfileView extends Component{
-  constructor () {
-   super()
+export default class Profile extends Component{
+  constructor (props) {
+   super(props)
    this.state = {
-     text: '',
-     items: []
+     text: ''
    }
  }
-
-  componentWillMount() {
-    // debugger
-    // console.error(this.props.profile)
-  }
 
   render() {
     return (
@@ -50,14 +40,19 @@ export default class ProfileView extends Component{
           onPress={this._onCallApi.bind(this)}>
           <Text>Get Data</Text>
         </TouchableHighlight>
-        <Text>{this.state.items}</Text>
+        <ScrollView
+          style={styles.scrollView}>
+          {this.props.books.map(function(book, i) {
+            return <Row key={i} book={book} />}
+          )}
+        </ScrollView>
       </View>
     );
   }
 
   _onCallApi() {
     let API_ENDPOINT = `https://www.googleapis.com/books/v1/volumes?q=${this.state.text}`;
-
+    const { books, getBooks } = this.props
     fetch(API_ENDPOINT, {
         method: "GET",
         // headers: {
@@ -66,7 +61,7 @@ export default class ProfileView extends Component{
       })
       .then((response) => response.json())
       .then((responseJSON) => {
-        debugger
+        getBooks(responseJSON.items)
         Alert.alert(
           'Request Successful',
           `We found ${responseJSON.totalItems} books on ${this.state.text}`,
@@ -121,11 +116,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  graph: {
-    margin: 10,
-    borderRadius: 5,
+  scrollView: {
     top: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#6A85B1',
+    height: 300
   },
 });
