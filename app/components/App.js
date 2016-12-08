@@ -18,15 +18,16 @@ export default class App extends Component {
 
   render() {
       return (
-        <Navigator style={styles.navigator}
-          initialRoute={{ name: "Welcome"}}
-          renderScene= { this.renderScene.bind(this) }
-          navigationBar={
-             <Navigator.NavigationBar
-               style={ styles.nav }
-               routeMapper={NavigationBarRouteMapper} />
-             }
-        />
+        <Profile books={this.props.books} getBooks={this.props.getBooks} />
+        // <Navigator style={styles.navigator}
+        //   initialRoute={{ name: "Welcome"}}
+        //   renderScene= { this.renderScene.bind(this) }
+        //   navigationBar={
+        //      <Navigator.NavigationBar
+        //        style={ styles.nav }
+        //        routeMapper={NavigationBarRouteMapper} />
+        //      }
+        // />
     );
   }
 
