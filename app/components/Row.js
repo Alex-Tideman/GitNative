@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   bookRow: {
     flex: 1,
     padding: 10,
-    margin: 5,
+    margin: 3,
     flexDirection: 'column',
     backgroundColor: '#eee',
   },
