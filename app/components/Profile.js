@@ -40,6 +40,10 @@ export default class Profile extends Component{
           onPress={this._onCallApi.bind(this)}>
           <Text>Get Data</Text>
         </TouchableHighlight>
+        <View style={styles.bookChart}>
+          <View style={[styles.bar, styles.barPast]} />
+          <View style={[styles.bar, styles.barFuture]} />
+        </View>
         <ScrollView
           style={styles.scrollView}>
           {this.props.books.map(function(book, i) {
@@ -116,9 +120,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  bookChart: {
+    top: 110,
+    height: 50,
+    flexDirection: 'row',
+    paddingLeft: 50,
+    paddingRight: 50,
+  },
+  bar: {
+    width: 10,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+  },
+  barPast: {
+    backgroundColor: 'gray',
+  },
+  barFuture: {
+    backgroundColor: '#bbccddff',
+    marginLeft: 10,
+  },
   scrollView: {
-    top: 150,
-    backgroundColor: '#6A85B1',
-    height: 300
+    top: 160,
+    backgroundColor: '#D9DADF',
+    height: 400
   },
 });
