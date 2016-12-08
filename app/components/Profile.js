@@ -13,6 +13,7 @@ import {
   Animated
 } from 'react-native'
 
+import BookChart from './BookChart'
 import Row from './Row'
 
 export default class Profile extends Component{
@@ -26,7 +27,7 @@ export default class Profile extends Component{
    }
  }
 
-  render() {
+ render() {
     return (
       <View style={styles.profile} >
         <TextInput
@@ -66,15 +67,8 @@ export default class Profile extends Component{
           onPress={this._onCallApi.bind(this)}>
           <Text style={styles.apiButtonLabel}>Get Books</Text>
         </TouchableHighlight>
-        <View style={styles.bookChart}>
-        {this.props.books.sort(function(a,b) {
-          let aScore = a.volumeInfo.averageRating ? a.volumeInfo.averageRating : 0
-          let bScore = b.volumeInfo.averageRating ? b.volumeInfo.averageRating : 0
-          return bScore - aScore
-        }).map(function(book, i) {
-          let score = book.volumeInfo.averageRating ? book.volumeInfo.averageRating * 12 : 2
-          return <View key={i} style={[{height: score,backgroundColor:'#1E77E2'}, styles.bar, styles.barPast]} />}
-        )}
+        <View style={{margin: 5}}>
+          <BookChart books={this.props.books} />
         </View>
         <ScrollView
           style={styles.scrollView}>
@@ -122,6 +116,7 @@ export default class Profile extends Component{
         )
       })
       .catch((error) => {
+        getBooks([])
         Alert.alert(
           'Request Failed',
           'Please try a different search',
@@ -192,7 +187,7 @@ const styles = StyleSheet.create({
     shadowColor: '#1b71E2',
     shadowRadius: 10,
     borderRadius: 5,
-    top: 50,
+    top: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -200,7 +195,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   bookChart: {
-    top: 50,
     height: 100,
     flexDirection: 'row',
     paddingLeft: 50,
@@ -213,8 +207,8 @@ const styles = StyleSheet.create({
     marginLeft: 2,
   },
   scrollView: {
-    top: 50,
-    backgroundColor: '#D9DADF',
+    top: 20,
+    backgroundColor: '#1E77E2',
     height: 400
   },
 });

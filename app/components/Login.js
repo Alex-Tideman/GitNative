@@ -21,11 +21,11 @@ export default class Login extends Component{
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
+          <Text style={styles.title}>googbrarian</Text>
           <Image
             style={styles.badge}
-            source={require('../src/img/mn_outline.jpg')} />
+            source={require('../src/img/google-books.png')} />
         </View>
-        <Text style={styles.title}>Welcome to GitNative</Text>
         <TouchableHighlight
           style={styles.signInButton}
           underlayColor='#949494'
@@ -68,11 +68,13 @@ const styles = StyleSheet.create({
   },
   badge: {
     alignSelf: 'center',
+    marginRight: 30,
     height: Dimensions.get('window').width,
     resizeMode: Image.resizeMode.contain,
   },
   title: {
-    fontSize: 24,
+    fontSize: 48,
+    fontWeight: '100',
     color: '#2b2b2b',
     textAlign: 'center',
     backgroundColor: '#fff',

@@ -68,7 +68,7 @@ var NavigationBarRouteMapper = {
   },
 
   Title(route, navigator, index, navState) {
-    return <Text style={ styles.title }>GitNative</Text>
+    return <Text style={ styles.title }>googbrarian</Text>
   }
 };
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop:4,
-    fontSize:16
+    fontSize:16,
   },
   leftNavButtonText: {
    	fontSize: 18,

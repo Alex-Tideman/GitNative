@@ -31,13 +31,10 @@ export default class Row extends Component{
     }
     return (
       <View style={styles.bookRow}>
-        <Text>Title: {book.volumeInfo.title}</Text>
-        <Text>Author: {authors}</Text>
-        <Text>Average Rating: {book.volumeInfo.averageRating}</Text>
-        <Text># of Pages: {book.volumeInfo.pageCount}</Text>
-        <Image
-          style={styles.bookAvatar}
-          source={{uri: book.volumeInfo.imageLinks.smallThumbnail}} />
+        <Text style={[styles.bookInfo, styles.bookTitle]}>Title: {book.volumeInfo.title}</Text>
+        <Text style={[styles.bookInfo, styles.bookAuthor]}>Author: {authors}</Text>
+        <Text style={[styles.bookInfo, styles.bookRating]}>Average Rating: {book.volumeInfo.averageRating}</Text>
+        <Text style={[styles.bookInfo, styles.bookPageCount]}># of Pages: {book.volumeInfo.pageCount}</Text>
       </View>
     );
   }
@@ -46,9 +43,13 @@ export default class Row extends Component{
 const styles = StyleSheet.create({
   bookRow: {
     flex: 1,
-    padding: 15,
+    padding: 10,
+    margin: 5,
     flexDirection: 'column',
-    backgroundColor: '#fff',
+    backgroundColor: '#eee',
+  },
+  bookInfo: {
+    fontSize: 20,
   },
   bookAvatar: {
     flex: 3,
