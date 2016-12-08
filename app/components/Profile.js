@@ -31,11 +31,15 @@ export default class Profile extends Component{
       <View style={styles.profile} >
         <TextInput
           style={styles.form}
+          placeholder={'Search term'}
+          placeholderTextColor={'#1E77E2'}
           autoCapitalize={'none'}
           onChangeText={(text) => this.setState({searchTerm: text})}
           value={this.state.searchTerm} />
         <TextInput
           style={styles.form}
+          placeholder={'Search a subject'}
+          placeholderTextColor={'#1E77E2'}
           autoCapitalize={'none'}
           onChangeText={(text) => this.setState({subject: text})}
           value={this.state.subject} />
@@ -60,7 +64,7 @@ export default class Profile extends Component{
           underlayColor='#949494'
           disabled={!this.state.searchTerm && !this.state.subject}
           onPress={this._onCallApi.bind(this)}>
-          <Text>Get Books</Text>
+          <Text style={styles.apiButtonLabel}>Get Books</Text>
         </TouchableHighlight>
         <View style={styles.bookChart}>
         {this.props.books.sort(function(a,b) {
@@ -181,16 +185,23 @@ const styles = StyleSheet.create({
   callApiButton: {
     height: 50,
     alignSelf: 'stretch',
-    backgroundColor: '#D9DADF',
+    backgroundColor: '#fff',
+    borderColor: '#1E77E2',
+    borderWidth: 2,
     margin: 10,
+    shadowColor: '#1b71E2',
+    shadowRadius: 10,
     borderRadius: 5,
-    top: 90,
+    top: 50,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  apiButtonLabel: {
+    fontSize: 24,
+  },
   bookChart: {
-    top: 110,
-    height: 50,
+    top: 50,
+    height: 100,
     flexDirection: 'row',
     paddingLeft: 50,
     paddingRight: 50,
@@ -202,7 +213,7 @@ const styles = StyleSheet.create({
     marginLeft: 2,
   },
   scrollView: {
-    top: 160,
+    top: 50,
     backgroundColor: '#D9DADF',
     height: 400
   },
