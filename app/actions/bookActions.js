@@ -1,8 +1,7 @@
-import * as types from './actionTypes';
+import {types} from './actionTypes';
 
-export function getBooks(data) {
-  return {
-    type: types.GET_BOOKS,
-    data: data
-  };
+export const actionCreators = {
+  getBooks: (data) => {
+    return {type: types.GET_BOOKS, data: data}
+  }
 }

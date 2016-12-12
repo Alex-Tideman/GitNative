@@ -1,1 +1,3 @@
-export const GET_BOOKS = 'GET_BOOKS';
+export const types = {
+  GET_BOOKS: 'GET_BOOKS'
+}

@@ -18,8 +18,9 @@ export default class App extends Component {
   }
 
   render() {
+    const { books } = this.props
       return (
-        // <Search books={this.props.books} getBooks={this.props.getBooks} />
+        // <Search books={books} />
         <Navigator style={styles.navigator}
           initialRoute={{ name: "Welcome"}}
           renderScene= { this.renderScene.bind(this) }
@@ -33,15 +34,15 @@ export default class App extends Component {
   }
 
   renderScene(route, navigator) {
-    const { books, getBooks } = this.props
+    const { books, dispatch } = this.props
     if (route.name == "Welcome") {
       return <Login navigator={navigator} {...route.passProps} />
     }
     if (route.name == "Search") {
-      return <Search navigator={navigator} {...route.passProps} books={books} getBooks={getBooks} />
+      return <Search navigator={navigator} {...route.passProps} books={books} />
     }
     if (route.name == "Visualize") {
-      return <Visualize navigator={navigator} {...route.passProps} books={books} getBooks={getBooks} />
+      return <Visualize navigator={navigator} {...route.passProps} books={books} />
     }
   }
 }

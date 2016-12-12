@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import {
   StyleSheet,
@@ -16,11 +17,13 @@ import {
 import RatingChart from './RatingChart'
 import PageChart from './PageChart'
 
-export default class Visualize extends Component{
+const mapStateToProps = (state) => ({
+  books: state.books
+})
+
+class Visualize extends Component {
   constructor (props) {
    super(props)
-   this.state = {
-   }
  }
 
  render() {
@@ -33,9 +36,9 @@ export default class Visualize extends Component{
       </View>
     )
   }
-
-
 }
+
+export default connect(mapStateToProps)(Visualize);
 
 const styles = StyleSheet.create({
   visualize: {

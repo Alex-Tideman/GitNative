@@ -4,14 +4,17 @@ const initialState = {
   books: []
 };
 
-export default function books(state = initialState, action = {}) {
-  switch (action.type) {
-    case types.GET_BOOKS:
+export const reducer = (state = initialState, action) => {
+  const { books } = state
+  const { type, data } = action
+
+  switch (type) {
+    case 'GET_BOOKS':
       return {
         ...state,
-        books: action.data
-      };
-    default:
-      return state;
+        books: data
+      }
   }
+
+  return state
 }

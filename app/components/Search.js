@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 import {
   StyleSheet,
   Text,
@@ -13,9 +13,14 @@ import {
   Animated
 } from 'react-native'
 
+import { actionCreators } from '../actions/bookActions'
 import Row from './Row'
 
-export default class Search extends Component{
+const mapStateToProps = (state) => ({
+  books: state.books
+})
+
+class Search extends Component{
   constructor (props) {
    super(props)
    this.state = {
@@ -25,6 +30,11 @@ export default class Search extends Component{
      orderByNewest: false
    }
  }
+
+ onGetBooks = (books) => {
+    const {dispatch} = this.props
+    dispatch(actionCreators.getBooks(books))
+  }
 
  render() {
     return (
@@ -77,8 +87,9 @@ export default class Search extends Component{
   }
 
   _onCallApi() {
-    let { books, getBooks} = this.props
-    let {freeEbook, orderByNewest, searchTerm, subject} = this.state
+    const component = this
+    const { books, getBooks, dispatch } = this.props
+    const {freeEbook, orderByNewest, searchTerm, subject} = this.state
     let searchTerms
 
     if(subject) {
@@ -102,7 +113,7 @@ export default class Search extends Component{
       })
       .then((response) => response.json())
       .then((responseJSON) => {
-        getBooks(responseJSON.items)
+        component.onGetBooks(responseJSON.items)
         Alert.alert(
           'Request Successful',
           `We found ${responseJSON.totalItems} books on ${this.state.searchTerm}`,
@@ -112,7 +123,7 @@ export default class Search extends Component{
         )
       })
       .catch((error) => {
-        getBooks([])
+        component.onGetBooks([])
         Alert.alert(
           'Request Failed',
           'Please try a different search',
@@ -123,6 +134,8 @@ export default class Search extends Component{
       });
   }
 }
+
+export default connect(mapStateToProps)(Search);
 
 const styles = StyleSheet.create({
   container: {
