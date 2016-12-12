@@ -8,9 +8,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import Login from './Login';
 import Search from './Search';
-import Visualize from './Visualize';
 
 export default class App extends Component {
   constructor(props) {
@@ -19,63 +17,11 @@ export default class App extends Component {
 
   render() {
     const { books } = this.props
-      return (
-        // <Search books={books} />
-        <Navigator style={styles.navigator}
-          initialRoute={{ name: "Welcome"}}
-          renderScene= { this.renderScene.bind(this) }
-          navigationBar={
-             <Navigator.NavigationBar
-               style={ styles.nav }
-               routeMapper={NavigationBarRouteMapper} />
-             }
-        />
-    );
-  }
-
-  renderScene(route, navigator) {
-    const { books, dispatch } = this.props
-    if (route.name == "Welcome") {
-      return <Login navigator={navigator} {...route.passProps} />
-    }
-    if (route.name == "Search") {
-      return <Search navigator={navigator} {...route.passProps} books={books} />
-    }
-    if (route.name == "Visualize") {
-      return <Visualize navigator={navigator} {...route.passProps} books={books} />
-    }
+    return (
+      <Search books={books} />
+    )
   }
 }
-
-var NavigationBarRouteMapper = {
-  LeftButton(route, navigator, index, navState) {
-    if(index > 0) {
-      return (
-        <TouchableHighlight
-          underlayColor="transparent"
-          onPress={() => { if (index > 0) { navigator.pop() } }}>
-          <Text style={ styles.leftNavButtonText }>Back</Text>
-        </TouchableHighlight>)
-    }
-    else { return null }
-  },
-
-  RightButton(route, navigator, index, navState) {
-    if(index > 0) {
-      return (
-        <TouchableHighlight
-          underlayColor="transparent"
-          onPress={() => {navigator.push({name: 'Visualize'})}}>
-          <Text style={ styles.rightNavButtonText }>Visualize</Text>
-        </TouchableHighlight>)
-    }
-    else { return null }
-  },
-
-  Title(route, navigator, index, navState) {
-    return <Text style={ styles.title }>googbrarian</Text>
-  }
-};
 
 const styles = StyleSheet.create({
   navigator: {

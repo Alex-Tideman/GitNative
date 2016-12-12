@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import {
   StyleSheet,
   Text,
@@ -13,14 +12,9 @@ import {
   Animated
 } from 'react-native'
 
-import { actionCreators } from '../actions/bookActions'
 import Row from './Row'
 
-const mapStateToProps = (state) => ({
-  books: state.books
-})
-
-class Search extends Component{
+export default class Search extends Component{
   constructor (props) {
    super(props)
    this.state = {
@@ -30,11 +24,6 @@ class Search extends Component{
      orderByNewest: false
    }
  }
-
- onGetBooks = (books) => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.getBooks(books))
-  }
 
  render() {
     return (
@@ -78,7 +67,7 @@ class Search extends Component{
         </TouchableHighlight>
         <ScrollView
           style={styles.scrollView}>
-          {this.props.books.map(function(book, i) {
+          {[].map(function(book, i) {
             return <Row key={i} book={book} />}
           )}
         </ScrollView>
@@ -113,7 +102,6 @@ class Search extends Component{
       })
       .then((response) => response.json())
       .then((responseJSON) => {
-        component.onGetBooks(responseJSON.items)
         Alert.alert(
           'Request Successful',
           `We found ${responseJSON.totalItems} books on ${this.state.searchTerm}`,
@@ -123,7 +111,6 @@ class Search extends Component{
         )
       })
       .catch((error) => {
-        component.onGetBooks([])
         Alert.alert(
           'Request Failed',
           'Please try a different search',
@@ -134,8 +121,6 @@ class Search extends Component{
       });
   }
 }
-
-export default connect(mapStateToProps)(Search);
 
 const styles = StyleSheet.create({
   container: {
