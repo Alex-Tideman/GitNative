@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 
 import Login from './Login';
-import Profile from './Profile';
+import Search from './Search';
+import Visualize from './Visualize';
 
 export default class App extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class App extends Component {
 
   render() {
       return (
-        // <Profile books={this.props.books} getBooks={this.props.getBooks} />
+        // <Search books={this.props.books} getBooks={this.props.getBooks} />
         <Navigator style={styles.navigator}
           initialRoute={{ name: "Welcome"}}
           renderScene= { this.renderScene.bind(this) }
@@ -36,8 +37,11 @@ export default class App extends Component {
     if (route.name == "Welcome") {
       return <Login navigator={navigator} {...route.passProps} />
     }
-    if (route.name == "Profile") {
-      return <Profile navigator={navigator} {...route.passProps} books={books} getBooks={getBooks} />
+    if (route.name == "Search") {
+      return <Search navigator={navigator} {...route.passProps} books={books} getBooks={getBooks} />
+    }
+    if (route.name == "Visualize") {
+      return <Visualize navigator={navigator} {...route.passProps} books={books} getBooks={getBooks} />
     }
   }
 }
@@ -60,8 +64,8 @@ var NavigationBarRouteMapper = {
       return (
         <TouchableHighlight
           underlayColor="transparent"
-          onPress={() => {navigator.pop()}}>
-          <Text style={ styles.rightNavButtonText }>Next</Text>
+          onPress={() => {navigator.push({name: 'Visualize'})}}>
+          <Text style={ styles.rightNavButtonText }>Visualize</Text>
         </TouchableHighlight>)
     }
     else { return null }

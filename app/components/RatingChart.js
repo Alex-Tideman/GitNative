@@ -13,7 +13,7 @@ import {
   Animated
 } from 'react-native'
 
-export default class BookChart extends Component{
+export default class RatingChart extends Component{
   constructor (props) {
    super(props)
  }
@@ -28,7 +28,6 @@ export default class BookChart extends Component{
        let bScore = b.volumeInfo.averageRating ? b.volumeInfo.averageRating : 0
        return bScore - aScore
      }).map(function(book, i) {
-       let pageHeight = book.volumeInfo.pageCount ? Math.round(book.volumeInfo.pageCount / 10) : -2
        let score = book.volumeInfo.averageRating ? book.volumeInfo.averageRating * 12 : 2
        if(score >= 50) {
          scoreColor = '#1E77E2'
@@ -48,7 +47,6 @@ export default class BookChart extends Component{
        return (
          <View style={styles.bookChart} key={i}>
           <View style={[{height: score,backgroundColor:scoreColor}, styles.bar, styles.barRating]} />
-          <View style={[{height: pageHeight}, styles.bar, styles.barPageCount]} />
          </View>
        )}
      )}
@@ -72,11 +70,5 @@ const styles = StyleSheet.create({
     marginLeft: 2,
   },
   barRating: {
-  },
-  barPageCount: {
-    left: 0,
-    opacity: .2,
-    backgroundColor: 'green',
-    marginLeft: -10
   }
 });

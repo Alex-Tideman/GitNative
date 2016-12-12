@@ -44,7 +44,7 @@ export default class Login extends Component{
           return;
         }
         this.props.navigator.push({
-          name: 'Profile',
+          name: 'Search',
           passProps: {
             profile: profile,
             token: token

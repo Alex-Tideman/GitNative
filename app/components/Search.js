@@ -13,10 +13,9 @@ import {
   Animated
 } from 'react-native'
 
-import BookChart from './BookChart'
 import Row from './Row'
 
-export default class Profile extends Component{
+export default class Search extends Component{
   constructor (props) {
    super(props)
    this.state = {
@@ -67,9 +66,6 @@ export default class Profile extends Component{
           onPress={this._onCallApi.bind(this)}>
           <Text style={styles.apiButtonLabel}>Get Books</Text>
         </TouchableHighlight>
-        <View style={{margin: 5}}>
-          <BookChart books={this.props.books} />
-        </View>
         <ScrollView
           style={styles.scrollView}>
           {this.props.books.map(function(book, i) {
@@ -193,18 +189,6 @@ const styles = StyleSheet.create({
   },
   apiButtonLabel: {
     fontSize: 24,
-  },
-  bookChart: {
-    height: 100,
-    flexDirection: 'row',
-    paddingLeft: 50,
-    paddingRight: 50,
-  },
-  bar: {
-    width: 10,
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    marginLeft: 2,
   },
   scrollView: {
     top: 20,
