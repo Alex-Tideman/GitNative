@@ -13,12 +13,8 @@ import {
   Animated
 } from 'react-native'
 
-import { actionCreators } from '../actions/bookActions'
+import booksContainer from '../containers/booksContainer'
 import Row from './Row'
-
-const mapStateToProps = (state) => ({
-  books: state.books
-})
 
 class Search extends Component{
   constructor (props) {
@@ -30,11 +26,6 @@ class Search extends Component{
      orderByNewest: false
    }
  }
-
- onGetBooks = (books) => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.getBooks(books))
-  }
 
  render() {
     return (
@@ -113,7 +104,7 @@ class Search extends Component{
       })
       .then((response) => response.json())
       .then((responseJSON) => {
-        component.onGetBooks(responseJSON.items)
+        getBooks(responseJSON.items)
         Alert.alert(
           'Request Successful',
           `We found ${responseJSON.totalItems} books on ${this.state.searchTerm}`,
@@ -123,7 +114,7 @@ class Search extends Component{
         )
       })
       .catch((error) => {
-        component.onGetBooks([])
+        getBooks([])
         Alert.alert(
           'Request Failed',
           'Please try a different search',
@@ -135,7 +126,7 @@ class Search extends Component{
   }
 }
 
-export default connect(mapStateToProps)(Search);
+export default booksContainer(Search);
 
 const styles = StyleSheet.create({
   container: {
