@@ -5,13 +5,17 @@ import { Provider } from 'react-redux';
 import { reducer } from '../reducers/book';
 const store = createStore(reducer);
 
-import GitNativeApp from './gitNativeApp';
+import App from '../components/App';
 
-export default class App extends Component {
+export default class Main extends Component {
   render() {
+    const { books } = this.props;
+
     return (
       <Provider store={store}>
-        <GitNativeApp />
+        <App
+          books={books}
+           />
       </Provider>
     );
   }

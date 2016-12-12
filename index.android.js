@@ -2,6 +2,6 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 
-import App from './app/containers/app';
+import Main from './app/containers/main';
 
-AppRegistry.registerComponent('GitNative', () => App);
+AppRegistry.registerComponent('GitNative', () => Main);
