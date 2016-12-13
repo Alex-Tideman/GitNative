@@ -79,7 +79,7 @@ class Search extends Component{
 
   _onCallApi() {
     const component = this
-    const { books, getBooks, dispatch } = this.props
+    const { books, getBooks } = this.props
     const {freeEbook, orderByNewest, searchTerm, subject} = this.state
     let searchTerms
 
