@@ -11,6 +11,14 @@ import {
 import Login from './Login';
 import Search from './Search';
 import Visualize from './Visualize';
+import Profile from './Profile';
+
+const routes = [
+  { component: Login, title: 'Login to get books' },
+  { component: Search, title: 'Search for books' },
+  { component: Visualize, title: 'Visualize book data' },
+  { component: Profile, title: 'Profile' }
+]
 
 export default class App extends Component {
   constructor(props) {
@@ -19,11 +27,17 @@ export default class App extends Component {
 
   render() {
     const { books } = this.props
+
       return (
-        // <Search books={books} />
         <Navigator style={styles.navigator}
-          initialRoute={{ name: "Welcome"}}
-          renderScene= { this.renderScene.bind(this) }
+          initialRoute={routes[0]}
+          initialRouteStack={routes}
+          renderScene={(route, navigator) => {
+            let RouteComponent = route.component;
+            return (
+              <RouteComponent {...route} navigator={navigator} />
+            )
+          }}
           navigationBar={
              <Navigator.NavigationBar
                style={ styles.nav }
@@ -32,30 +46,16 @@ export default class App extends Component {
         />
     );
   }
-
-  renderScene(route, navigator) {
-    const { books, dispatch } = this.props
-    if (route.name == "Welcome") {
-      return <Login navigator={navigator} {...route.passProps} />
-    }
-    if (route.name == "Search") {
-      return <Search navigator={navigator} {...route.passProps} books={books} />
-    }
-    if (route.name == "Visualize") {
-      return <Visualize navigator={navigator} {...route.passProps} books={books} />
-    }
-  }
 }
 
 var NavigationBarRouteMapper = {
   LeftButton(route, navigator, index, navState) {
     if(index > 0) {
       return (
-        <TouchableHighlight
-          underlayColor="transparent"
-          onPress={() => { if (index > 0) { navigator.pop() } }}>
-          <Text style={ styles.leftNavButtonText }>Back</Text>
-        </TouchableHighlight>)
+        <TouchableHighlight onPress={() => navigator.pop()}>
+          <Text style={styles.prevButton}>Prev</Text>
+        </TouchableHighlight>
+      )
     }
     else { return null }
   },
@@ -63,17 +63,16 @@ var NavigationBarRouteMapper = {
   RightButton(route, navigator, index, navState) {
     if(index > 0) {
       return (
-        <TouchableHighlight
-          underlayColor="transparent"
-          onPress={() => {navigator.push({name: 'Visualize'})}}>
-          <Text style={ styles.rightNavButtonText }>Visualize</Text>
-        </TouchableHighlight>)
+        <TouchableHighlight onPress={() => navigator.push(routes[index + 1])}>
+          <Text style={styles.nextButton}>Next</Text>
+        </TouchableHighlight>
+      )
     }
     else { return null }
   },
 
   Title(route, navigator, index, navState) {
-    return <Text style={ styles.title }>googbrarian</Text>
+    return <Text style={ styles.navTitle }>googbrarian</Text>
   }
 };
 
@@ -81,22 +80,22 @@ const styles = StyleSheet.create({
   navigator: {
     flex: 1,
   },
-  title: {
+  navTitle: {
     marginTop:4,
     fontSize:16,
   },
-  leftNavButtonText: {
-   	fontSize: 18,
-    marginLeft:13,
-    marginTop:2
+  prevButton: {
+   	fontSize: 16,
+    marginLeft:15,
+    marginTop:2,
   },
-  rightNavButtonText: {
-    fontSize: 18,
-    marginRight:13,
-    marginTop:2
+  nextButton: {
+    fontSize: 16,
+    marginRight:15,
+    marginTop:2,
   },
   nav: {
-    height: 60,
-    backgroundColor: '#efefef',
+    height: 50,
+    backgroundColor: '#1E77E2',
   }
 });

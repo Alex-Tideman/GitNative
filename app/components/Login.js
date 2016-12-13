@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Search from './Search'
 import Auth0Lock from 'react-native-lock';
 var credentials = require('../../auth0-credentials');
 var lock = new Auth0Lock(credentials);
@@ -21,10 +22,10 @@ export default class Login extends Component{
     return (
       <View style={styles.container}>
         <View style={styles.messageBox}>
-          <Text style={styles.title}>googbrarian</Text>
           <Image
             style={styles.badge}
             source={require('../src/img/google-books.png')} />
+          <Text style={styles.title}>googbrarian</Text>
         </View>
         <TouchableHighlight
           style={styles.signInButton}
@@ -44,7 +45,8 @@ export default class Login extends Component{
           return;
         }
         this.props.navigator.push({
-          name: 'Search',
+          component: Search,
+          title: 'Search for books',
           passProps: {
             profile: profile,
             token: token
@@ -60,13 +62,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    marginTop: 60,
   },
   messageBox: {
     flex: 1,
     justifyContent: 'center',
   },
   badge: {
+    top: 20,
     alignSelf: 'center',
     marginRight: 30,
     height: Dimensions.get('window').width,
@@ -75,9 +77,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     fontWeight: '100',
-    color: '#2b2b2b',
     textAlign: 'center',
-    backgroundColor: '#fff',
   },
   signInButton: {
     height: 50,

@@ -16,6 +16,7 @@ import {
 
 import RatingChart from './RatingChart'
 import PageChart from './PageChart'
+import RatingCountChart from './RatingCountChart'
 
 const mapStateToProps = (state) => ({
   books: state.books
@@ -31,6 +32,8 @@ class Visualize extends Component {
       <View style={styles.visualize} >
         <Text style={styles.chartTitle}>Reader Rating</Text>
         <RatingChart style={styles.chart} books={this.props.books} />
+        <Text style={styles.chartTitle}>Rating Count</Text>
+        <RatingCountChart style={styles.chart} books={this.props.books} />
         <Text style={styles.chartTitle}>Page Count</Text>
         <PageChart style={styles.chart} books={this.props.books} />
       </View>
