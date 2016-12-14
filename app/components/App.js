@@ -14,7 +14,7 @@ import Visualize from './Visualize';
 import Profile from './Profile';
 
 const routes = [
-  { component: Login, title: 'Login to get books' },
+  { component: Login, title: 'Login to get books'},
   { component: Search, title: 'Search for books' },
   { component: Visualize, title: 'Visualize book data' },
   { component: Profile, title: 'Profile' }
@@ -26,8 +26,6 @@ export default class App extends Component {
   }
 
   render() {
-    const { books } = this.props
-
       return (
         <Navigator style={styles.navigator}
           initialRoute={routes[0]}

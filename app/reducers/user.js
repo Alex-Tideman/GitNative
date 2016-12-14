@@ -1,22 +1,22 @@
 import * as types from '../actions/actionTypes';
-import Immutable from 'immutable'
 
 const initialState = {
-  books: []
+  user: {}
 };
 
-const books = (state = initialState, action) => {
-  const { books } = state
+const user = (state = initialState, action) => {
+  const { user } = state
   const { type, data } = action
 
   switch (type) {
-    case 'GET_BOOKS':
+    case 'GET_USER':
       return {
         ...state,
-        books: data
+        user: data
       }
   }
+
   return state
 }
 
-export default books
+export default user

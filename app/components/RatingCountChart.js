@@ -50,7 +50,6 @@ export default class RatingCountChart extends Component{
    return (
      <View style={styles.bookChart}>
      {this.props.books.sort(function(a,b) {
-       debugger
        let aHeight = a.volumeInfo.ratingsCount ? a.volumeInfo.ratingsCount : 0
        let bHeight = b.volumeInfo.ratingsCount ? b.volumeInfo.ratingsCount : 0
        return bHeight - aHeight

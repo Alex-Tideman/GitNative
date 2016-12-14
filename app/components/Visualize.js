@@ -14,13 +14,10 @@ import {
   Animated
 } from 'react-native'
 
+import booksContainer from '../containers/booksContainer'
 import RatingChart from './RatingChart'
 import PageChart from './PageChart'
 import RatingCountChart from './RatingCountChart'
-
-const mapStateToProps = (state) => ({
-  books: state.books
-})
 
 class Visualize extends Component {
   constructor (props) {
@@ -41,7 +38,7 @@ class Visualize extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Visualize);
+export default booksContainer(Visualize);
 
 const styles = StyleSheet.create({
   visualize: {

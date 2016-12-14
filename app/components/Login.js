@@ -8,12 +8,13 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import userContainer from '../containers/userContainer'
 import Search from './Search'
 import Auth0Lock from 'react-native-lock';
 var credentials = require('../../auth0-credentials');
 var lock = new Auth0Lock(credentials);
 
-export default class Login extends Component{
+class Login extends Component{
   constructor (props) {
    super(props)
  }
@@ -38,6 +39,8 @@ export default class Login extends Component{
   }
 
   _onLogin() {
+    const { getUser } = this.props
+
     lock.show({
       }, (err, profile, token) => {
         if (err) {
@@ -47,14 +50,15 @@ export default class Login extends Component{
         this.props.navigator.push({
           component: Search,
           title: 'Search for books',
-          passProps: {
-            profile: profile,
-            token: token
-          }
+          profile: profile,
+          token: token
         })
+        getUser(profile)
     })
   }
 }
+
+export default userContainer(Login)
 
 const styles = StyleSheet.create({
   container: {

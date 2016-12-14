@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
-import { actionCreators } from '../actions/bookActions'
+import { actionCreators } from '../actions/userActions'
 
 const mapStateToProps = (state) => {
-  return { books: state.books.books }
+  return { user: state.user.user }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getBooks: (books) => {
-       dispatch(actionCreators.getBooks(books))
+    getUser: (user) => {
+       dispatch(actionCreators.getUser(user))
      }
   }
 }

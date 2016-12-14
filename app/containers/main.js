@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
+import reducers from '../reducers/index'
 
-import { reducer } from '../reducers/book';
-const store = createStore(reducer);
+const store = createStore(reducers);
 
 import App from '../components/App';
 
 export default class Main extends Component {
   render() {
-    const { books } = this.props;
-
     return (
       <Provider store={store}>
-        <App
-          books={books}
-           />
+        <App />
       </Provider>
     );
   }
