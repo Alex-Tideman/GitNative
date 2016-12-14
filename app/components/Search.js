@@ -14,6 +14,8 @@ import {
 } from 'react-native'
 
 import booksContainer from '../containers/booksContainer'
+import userContainer from '../containers/userContainer'
+
 import Row from './Row'
 
 class Search extends Component{
@@ -32,7 +34,7 @@ class Search extends Component{
       <View style={styles.profile} >
         <TextInput
           style={styles.form}
-          placeholder={'Search term'}
+          placeholder={`${this.props.user.name} is searching...`}
           placeholderTextColor={'#1E77E2'}
           autoCapitalize={'none'}
           onChangeText={(text) => this.setState({searchTerm: text})}
@@ -126,7 +128,9 @@ class Search extends Component{
   }
 }
 
-export default booksContainer(Search);
+export default booksContainer(
+                userContainer(Search)
+              )
 
 const styles = StyleSheet.create({
   container: {
