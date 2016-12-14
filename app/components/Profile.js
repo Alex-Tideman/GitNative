@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
+  Linking,
   StyleSheet,
   Text,
   View,
@@ -32,6 +33,19 @@ class Profile extends Component{
         <Image style={styles.avatar} source={{uri: user.picture}} />
       </View>
     )
+  }
+
+  sendEmail = () => {
+    const { user } = this.props
+    if(user) {
+      Linking.canOpenURL(user.email).then(supported => {
+        if (supported) {
+          Linking.openURL(user.email);
+        } else {
+          console.log('Don\'t know how to open URI: ' + user.email);
+        }
+      });
+    }
   }
 }
 

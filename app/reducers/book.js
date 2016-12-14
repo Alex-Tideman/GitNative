@@ -13,7 +13,7 @@ const books = (state = initialState, action) => {
     case 'GET_BOOKS':
       return {
         ...state,
-        books: data
+        books: Immutable.List(data)
       }
   }
   return state

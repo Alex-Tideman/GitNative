@@ -8,7 +8,8 @@ import {
   TouchableHighlight,
   Alert,
   TextInput,
-  Animated
+  Animated,
+  WebView
 } from 'react-native'
 
 export default class Row extends Component{
@@ -46,21 +47,90 @@ export default class Row extends Component{
     if(book.volumeInfo.authors && book.volumeInfo.authors.length > 0) {
       authors = book.volumeInfo.authors.join(', ')
     }
+    return (
+      <View style={styles.bookRow}>
+        {this.renderPreview()}
+        <Text style={[styles.bookInfo, styles.bookTitle]}>{book.volumeInfo.title}</Text>
+        {this.renderImage()}
+        <Text style={[styles.bookInfo, styles.bookAuthor]}>Author(s): {authors}</Text>
+        {this.renderRating()}
+        {this.renderPageCount()}
+        {this.renderSnippet()}
+        {this.renderMaturity()}
+      </View>
+    );
+  }
+
+  renderImage() {
+    const {book} = this.props
+    if(book.imageLinks) {
+      return (
+        <Image style={styles.bookAvatar} source={{uri: book.volumeInfo.imageLinks[0]}} />
+      )
+    }
+    return (null)
+  }
+
+  renderRating() {
+    const {book} = this.props
+    let rating
     if(book.volumeInfo.averageRating) {
-      rating = book.volumeInfo.averageRating
+      rating = `${book.volumeInfo.averageRating} / 5`
     } else {
       rating = "N/A"
     }
     return (
-      <View style={styles.bookRow}>
-        <Text style={[styles.bookInfo, styles.bookTitle]}>{book.volumeInfo.title}</Text>
-        <Text style={[styles.bookInfo, styles.bookAuthor]}>Author: {authors}</Text>
-        <Text style={[styles.bookInfo, styles.bookRating]}>Average rating of {rating}</Text>
-        <Text style={[styles.bookInfo, styles.bookPageCount]}>{book.volumeInfo.pageCount} pages</Text>
-      </View>
-    );
+      <Text style={[styles.bookInfo, styles.bookRating]}>{rating}</Text>
+    )
   }
-}
+
+  renderPageCount() {
+    const {book} = this.props
+    if(book.volumeInfo.pageCount) {
+      return (
+        <Text style={[styles.bookInfo, styles.bookPageCount]}>{book.volumeInfo.pageCount} pages</Text>
+      )
+    }
+    return (null)
+  }
+
+  renderSnippet() {
+    const {book} = this.props
+    if(book.searchInfo && book.searchInfo.textSnippet) {
+      return (
+        <Text style={[styles.bookInfo, styles.bookPageCount]}>{book.searchInfo.textSnippet}</Text>
+      )
+    }
+    return (null)
+  }
+
+  renderMaturity() {
+    const {book} = this.props
+    if(book.volumeInfo.maturityRating === 'MATURE') {
+      return (
+        <View style={styles.mature}></View>
+      )
+    }
+    return (null)
+  }
+
+  renderPreview() {
+    const {book} = this.props
+    if(book.volumeInfo.previewLink) {
+      return (
+        <WebView
+          style={{
+            backgroundColor: '#2b2b2b',
+            height: 200,
+          }}
+          source={{url: `${book.volumeInfo.previewLink}`}}
+          scalesPageToFit={true}
+        />
+      )
+    }
+    return (null)
+  }
+ }
 
 const styles = StyleSheet.create({
   bookRow: {
@@ -86,11 +156,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '100',
   },
-
   bookAvatar: {
-    flex: 3,
     height: 30,
     width: 30,
-    borderRadius: 50
+  },
+  mature: {
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    backgroundColor: 'red',
   }
 })
