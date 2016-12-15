@@ -1,3 +1,0 @@
-return Object.assign({}, state, {
-  books: data
-})
