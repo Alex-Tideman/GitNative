@@ -30,7 +30,7 @@ class Search extends Component{
  }
 
  render() {
-   const { user } = this.props
+   const { user, books } = this.props
    if(user) {
      return (
        <View style={styles.profile} >
@@ -73,7 +73,7 @@ class Search extends Component{
          </TouchableHighlight>
          <ScrollView
            style={styles.scrollView}>
-           {this.props.books.map(function(book, i) {
+           {books.map(function(book, i) {
              return <Row key={i} book={book} />}
            )}
          </ScrollView>

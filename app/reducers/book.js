@@ -8,10 +8,7 @@ const books = (state = initialState, action) => {
 
   switch (type) {
     case 'GET_BOOKS':
-      return {
-        ...state,
-        books: Immutable.List(data)
-      }
+      return data
   }
   return state
 }

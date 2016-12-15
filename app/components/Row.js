@@ -123,7 +123,7 @@ export default class Row extends Component{
             backgroundColor: '#2b2b2b',
             height: 200,
           }}
-          source={{url: `${book.volumeInfo.previewLink}`}}
+          source={{uri: `${book.volumeInfo.previewLink}`}}
           scalesPageToFit={true}
         />
       )

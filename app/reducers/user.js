@@ -7,10 +7,7 @@ const user = (state = initialState, action) => {
 
   switch (type) {
     case 'GET_USER':
-      return {
-        ...state,
-        user: data
-      }
+      return data
   }
 
   return state
