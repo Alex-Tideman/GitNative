@@ -25,14 +25,16 @@ class Profile extends Component{
 
  render() {
    const { user } = this.props
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>{user.name}</Text>
-        <Text style={styles.info}>{user.email}</Text>
-        <Image style={styles.avatar} source={{uri: user.picture}} />
-      </View>
-    )
+   if(user) {
+     return (
+       <View style={styles.container}>
+         <Text style={styles.title}>{user.name}</Text>
+         <Text style={styles.info}>{user.email}</Text>
+         <Image style={styles.avatar} source={{uri: user.picture}} />
+       </View>
+     )
+   }
+   return (null)
   }
 
   sendEmail = () => {

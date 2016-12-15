@@ -1,12 +1,9 @@
 import * as types from '../actions/actionTypes';
 import Immutable from 'immutable'
 
-const initialState = {
-  books: []
-};
+const initialState = []
 
 const books = (state = initialState, action) => {
-  const { books } = state
   const { type, data } = action
 
   switch (type) {

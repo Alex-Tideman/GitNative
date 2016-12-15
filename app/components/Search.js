@@ -30,53 +30,57 @@ class Search extends Component{
  }
 
  render() {
-    return (
-      <View style={styles.profile} >
-        <TextInput
-          style={styles.form}
-          placeholder={`${this.props.user.name} is searching...`}
-          placeholderTextColor={'#1E77E2'}
-          autoCapitalize={'none'}
-          onChangeText={(text) => this.setState({searchTerm: text})}
-          value={this.state.searchTerm} />
-        <TextInput
-          style={styles.form}
-          placeholder={'Search a subject'}
-          placeholderTextColor={'#1E77E2'}
-          autoCapitalize={'none'}
-          onChangeText={(text) => this.setState({subject: text})}
-          value={this.state.subject} />
-        <Switch
-          onValueChange={(value) => this.setState({freeEbook: value})}
-          style={styles.ebook}
-          onTintColor="#74B135"
-          thumbTintColor="#1E77E2"
-          tintColor="#2b2b2b"
-          value={this.state.freeEbook} />
-        <Switch
-          onValueChange={(value) => this.setState({orderByNewest: value})}
-          style={styles.orderByNewest}
-          onTintColor="#74B135"
-          thumbTintColor="#1E77E2"
-          tintColor="#2b2b2b"
-          value={this.state.orderByNewest} />
-        <Text style={styles.eBookLabel}>Free E-Book</Text>
-        <Text style={styles.newestLabel}>Newest</Text>
-        <TouchableHighlight
-          style={styles.callApiButton}
-          underlayColor='#949494'
-          disabled={!this.state.searchTerm && !this.state.subject}
-          onPress={this._onCallApi.bind(this)}>
-          <Text style={styles.apiButtonLabel}>Get Books</Text>
-        </TouchableHighlight>
-        <ScrollView
-          style={styles.scrollView}>
-          {this.props.books.map(function(book, i) {
-            return <Row key={i} book={book} />}
-          )}
-        </ScrollView>
-      </View>
-    )
+   const { user } = this.props
+   if(user) {
+     return (
+       <View style={styles.profile} >
+         <TextInput
+           style={styles.form}
+           placeholder={`${user.name} is searching...`}
+           placeholderTextColor={'#1E77E2'}
+           autoCapitalize={'none'}
+           onChangeText={(text) => this.setState({searchTerm: text})}
+           value={this.state.searchTerm} />
+         <TextInput
+           style={styles.form}
+           placeholder={'Search a subject'}
+           placeholderTextColor={'#1E77E2'}
+           autoCapitalize={'none'}
+           onChangeText={(text) => this.setState({subject: text})}
+           value={this.state.subject} />
+         <Switch
+           onValueChange={(value) => this.setState({freeEbook: value})}
+           style={styles.ebook}
+           onTintColor="#74B135"
+           thumbTintColor="#1E77E2"
+           tintColor="#2b2b2b"
+           value={this.state.freeEbook} />
+         <Switch
+           onValueChange={(value) => this.setState({orderByNewest: value})}
+           style={styles.orderByNewest}
+           onTintColor="#74B135"
+           thumbTintColor="#1E77E2"
+           tintColor="#2b2b2b"
+           value={this.state.orderByNewest} />
+         <Text style={styles.eBookLabel}>Free E-Book</Text>
+         <Text style={styles.newestLabel}>Newest</Text>
+         <TouchableHighlight
+           style={styles.callApiButton}
+           underlayColor='#949494'
+           disabled={!this.state.searchTerm && !this.state.subject}
+           onPress={this._onCallApi.bind(this)}>
+           <Text style={styles.apiButtonLabel}>Get Books</Text>
+         </TouchableHighlight>
+         <ScrollView
+           style={styles.scrollView}>
+           {this.props.books.map(function(book, i) {
+             return <Row key={i} book={book} />}
+           )}
+         </ScrollView>
+       </View>
+     )
+   }
+   return (null)
   }
 
   _onCallApi() {

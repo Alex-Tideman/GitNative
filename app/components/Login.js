@@ -47,13 +47,12 @@ class Login extends Component{
           console.log(err);
           return;
         }
+        getUser(profile)
         this.props.navigator.push({
           component: Search,
           title: 'Search for books',
-          profile: profile,
           token: token
         })
-        getUser(profile)
     })
   }
 }

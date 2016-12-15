@@ -1,11 +1,8 @@
 import * as types from '../actions/actionTypes';
 
-const initialState = {
-  user: {}
-};
+const initialState = {}
 
 const user = (state = initialState, action) => {
-  const { user } = state
   const { type, data } = action
 
   switch (type) {
