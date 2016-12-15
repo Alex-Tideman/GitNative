@@ -49,7 +49,6 @@ export default class Row extends Component{
     }
     return (
       <View style={styles.bookRow}>
-        {this.renderPreview()}
         <Text style={[styles.bookInfo, styles.bookTitle]}>{book.volumeInfo.title}</Text>
         {this.renderImage()}
         <Text style={[styles.bookInfo, styles.bookAuthor]}>Author(s): {authors}</Text>
@@ -109,23 +108,6 @@ export default class Row extends Component{
     if(book.volumeInfo.maturityRating === 'MATURE') {
       return (
         <View style={styles.mature}></View>
-      )
-    }
-    return (null)
-  }
-
-  renderPreview() {
-    const {book} = this.props
-    if(book.volumeInfo.previewLink) {
-      return (
-        <WebView
-          style={{
-            backgroundColor: '#2b2b2b',
-            height: 200,
-          }}
-          source={{uri: `${book.volumeInfo.previewLink}`}}
-          scalesPageToFit={true}
-        />
       )
     }
     return (null)
