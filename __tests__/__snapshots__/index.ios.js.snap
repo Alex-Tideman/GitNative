@@ -1,14 +1,12 @@
 exports[`test it returns books in books reducer using Snapshots 1`] = `
-Object {
-  "books": Array [
-    Object {
-      "title": "20,000 Leagues Under the Sea",
-    },
-    Object {
-      "title": "Foundation",
-    },
-  ],
-}
+Array [
+  Object {
+    "title": "20,000 Leagues Under the Sea",
+  },
+  Object {
+    "title": "Foundation",
+  },
+]
 `;
 
 exports[`test renders a login screen using Snapshots 1`] = `
@@ -219,7 +217,176 @@ exports[`test renders a login screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={undefined}>
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="undefined is searching..."
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="Search a subject"
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 15,
+                "marginBottom": 10,
+                "top": 95,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 150,
+                "marginBottom": 10,
+                "top": 55,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 15,
+              "marginBottom": 10,
+              "top": 50,
+            }
+          }>
+          Free E-Book
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 150,
+              "marginBottom": 10,
+              "top": 25,
+            }
+          }>
+          Newest
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#fff",
+                "borderColor": "#1E77E2",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "height": 50,
+                "justifyContent": "center",
+                "margin": 10,
+                "shadowColor": "#1b71E2",
+                "shadowRadius": 10,
+                "top": 20,
+              },
+            ]
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }>
+            Get Books
+          </Text>
+        </View>
+        <ScrollView
+          style={
+            Object {
+              "backgroundColor": "#1E77E2",
+              "height": 400,
+              "top": 20,
+            }
+          } />
+      </View>
+    </View>
     <View
       onStartShouldSetResponderCapture={[Function]}
       pointerEvents="none"
@@ -392,7 +559,55 @@ exports[`test renders a login screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingTop": 200,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 42,
+              "fontWeight": "300",
+              "margin": 20,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "100",
+              "margin": 20,
+            }
+          } />
+        <Image
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 75,
+              "height": 150,
+              "width": 150,
+            }
+          } />
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -1036,7 +1251,176 @@ exports[`test renders data visualization with books using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={undefined}>
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="undefined is searching..."
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="Search a subject"
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 15,
+                "marginBottom": 10,
+                "top": 95,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 150,
+                "marginBottom": 10,
+                "top": 55,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 15,
+              "marginBottom": 10,
+              "top": 50,
+            }
+          }>
+          Free E-Book
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 150,
+              "marginBottom": 10,
+              "top": 25,
+            }
+          }>
+          Newest
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#fff",
+                "borderColor": "#1E77E2",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "height": 50,
+                "justifyContent": "center",
+                "margin": 10,
+                "shadowColor": "#1b71E2",
+                "shadowRadius": 10,
+                "top": 20,
+              },
+            ]
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }>
+            Get Books
+          </Text>
+        </View>
+        <ScrollView
+          style={
+            Object {
+              "backgroundColor": "#1E77E2",
+              "height": 400,
+              "top": 20,
+            }
+          } />
+      </View>
+    </View>
     <View
       onStartShouldSetResponderCapture={[Function]}
       pointerEvents="none"
@@ -1209,7 +1593,55 @@ exports[`test renders data visualization with books using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingTop": 200,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 42,
+              "fontWeight": "300",
+              "margin": 20,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "100",
+              "margin": 20,
+            }
+          } />
+        <Image
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 75,
+              "height": 150,
+              "width": 150,
+            }
+          } />
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -1853,7 +2285,176 @@ exports[`test renders no books on search screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={undefined}>
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="undefined is searching..."
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="Search a subject"
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 15,
+                "marginBottom": 10,
+                "top": 95,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 150,
+                "marginBottom": 10,
+                "top": 55,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 15,
+              "marginBottom": 10,
+              "top": 50,
+            }
+          }>
+          Free E-Book
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 150,
+              "marginBottom": 10,
+              "top": 25,
+            }
+          }>
+          Newest
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#fff",
+                "borderColor": "#1E77E2",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "height": 50,
+                "justifyContent": "center",
+                "margin": 10,
+                "shadowColor": "#1b71E2",
+                "shadowRadius": 10,
+                "top": 20,
+              },
+            ]
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }>
+            Get Books
+          </Text>
+        </View>
+        <ScrollView
+          style={
+            Object {
+              "backgroundColor": "#1E77E2",
+              "height": 400,
+              "top": 20,
+            }
+          } />
+      </View>
+    </View>
     <View
       onStartShouldSetResponderCapture={[Function]}
       pointerEvents="none"
@@ -2026,7 +2627,55 @@ exports[`test renders no books on search screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingTop": 200,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 42,
+              "fontWeight": "300",
+              "margin": 20,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "100",
+              "margin": 20,
+            }
+          } />
+        <Image
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 75,
+              "height": 150,
+              "width": 150,
+            }
+          } />
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -2670,7 +3319,176 @@ exports[`test renders the main app 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={undefined}>
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="undefined is searching..."
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="Search a subject"
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 15,
+                "marginBottom": 10,
+                "top": 95,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 150,
+                "marginBottom": 10,
+                "top": 55,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 15,
+              "marginBottom": 10,
+              "top": 50,
+            }
+          }>
+          Free E-Book
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 150,
+              "marginBottom": 10,
+              "top": 25,
+            }
+          }>
+          Newest
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#fff",
+                "borderColor": "#1E77E2",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "height": 50,
+                "justifyContent": "center",
+                "margin": 10,
+                "shadowColor": "#1b71E2",
+                "shadowRadius": 10,
+                "top": 20,
+              },
+            ]
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }>
+            Get Books
+          </Text>
+        </View>
+        <ScrollView
+          style={
+            Object {
+              "backgroundColor": "#1E77E2",
+              "height": 400,
+              "top": 20,
+            }
+          } />
+      </View>
+    </View>
     <View
       onStartShouldSetResponderCapture={[Function]}
       pointerEvents="none"
@@ -2843,7 +3661,55 @@ exports[`test renders the main app 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingTop": 200,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 42,
+              "fontWeight": "300",
+              "margin": 20,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "100",
+              "margin": 20,
+            }
+          } />
+        <Image
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 75,
+              "height": 150,
+              "width": 150,
+            }
+          } />
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -3487,7 +4353,176 @@ exports[`test renders two books on search screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={undefined}>
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="undefined is searching..."
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="Search a subject"
+          placeholderTextColor="#1E77E2"
+          style={
+            Object {
+              "borderColor": "gray",
+              "borderWidth": 1,
+              "height": 40,
+              "marginBottom": 15,
+              "marginLeft": 15,
+              "marginRight": 15,
+              "padding": 5,
+              "top": 85,
+            }
+          }
+          value={null} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 15,
+                "marginBottom": 10,
+                "top": 95,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#74B135"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              Object {
+                "left": 150,
+                "marginBottom": 10,
+                "top": 55,
+              },
+            ]
+          }
+          thumbTintColor="#1E77E2"
+          tintColor="#2b2b2b"
+          value={false} />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 15,
+              "marginBottom": 10,
+              "top": 50,
+            }
+          }>
+          Free E-Book
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 12,
+              "left": 150,
+              "marginBottom": 10,
+              "top": 25,
+            }
+          }>
+          Newest
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#fff",
+                "borderColor": "#1E77E2",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "height": 50,
+                "justifyContent": "center",
+                "margin": 10,
+                "shadowColor": "#1b71E2",
+                "shadowRadius": 10,
+                "top": 20,
+              },
+            ]
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }>
+            Get Books
+          </Text>
+        </View>
+        <ScrollView
+          style={
+            Object {
+              "backgroundColor": "#1E77E2",
+              "height": 400,
+              "top": 20,
+            }
+          } />
+      </View>
+    </View>
     <View
       onStartShouldSetResponderCapture={[Function]}
       pointerEvents="none"
@@ -3660,7 +4695,55 @@ exports[`test renders two books on search screen using Snapshots 1`] = `
             "top": 1334,
           },
         ]
-      } />
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingTop": 200,
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 42,
+              "fontWeight": "300",
+              "margin": 20,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "100",
+              "margin": 20,
+            }
+          } />
+        <Image
+          source={
+            Object {
+              "uri": undefined,
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 75,
+              "height": 150,
+              "width": 150,
+            }
+          } />
+      </View>
+    </View>
   </View>
   <View
     style={

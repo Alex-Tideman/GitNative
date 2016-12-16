@@ -78,10 +78,7 @@ it('creates a GET_BOOKS action', () => {
 it('it returns books in books reducer', () => {
   const initialState = []
   const data = [{title: '20,000 Leagues Under the Sea'},{title: 'Foundation'}]
-  expect(books(initialState, actionCreators.getBooks(data))).toEqual({
-    ...initialState,
-    books: data
-  })
+  expect(books(initialState, actionCreators.getBooks(data))).toEqual(data)
 })
 
 it('it returns books in books reducer using Snapshots', () => {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Dimensions from 'Dimensions'
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import {
   StyleSheet,
   Text,
