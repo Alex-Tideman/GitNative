@@ -22,7 +22,6 @@ export default class BookModal extends Component{
  }
 
   render() {
-    debugger
     return(
       <Modal
         animationType={'slide'}
@@ -56,7 +55,7 @@ export default class BookModal extends Component{
 
   renderImage() {
     const {book} = this.props
-    if(book.volumeInfo.imageLinks) {
+    if(book.volumeInfo.ctimageLinks) {
       return (
         <Image style={styles.bookAvatar} source={{uri: book.volumeInfo.imageLinks[0]}} />
       )
